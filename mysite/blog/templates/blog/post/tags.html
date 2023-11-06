@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block title %} Посты {% endblock %}
+{% block content %}
+<h1>Посты с тегом "{{ current_tag.name }}"</h1>
+{% for post in posts%}
+<a href="{{ post.get_absolute_url }}">{{post.title}}</a>
+<p>{{post.body}}</p>
+<p>{{post.created}}</p>
+<br>
+<br>
+{% endfor %}
+
+{% endblock%}
